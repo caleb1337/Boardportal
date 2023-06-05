@@ -1,6 +1,7 @@
 <?php
 
 include 'templates/header.php';
+
 ?>
 
 <div class="alert alert-danger" role="alert">
@@ -9,4 +10,6 @@ include 'templates/header.php';
 
 <?php
 include 'templates/footer.php';
+http_response_code(404);
+die();
 ?>

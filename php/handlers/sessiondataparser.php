@@ -1,3 +1,3 @@
 <?php
-["id" => $userid, "name"=> $username,"surname"=> $usersurname, "email"=> $useremail, "password" => $userpassword,
-    "role" => $userrole]= $_SESSION["user"];
+["id" => $_s_userid, "name"=> $_s_username,"surname"=> $_s_usersurname, "email"=> $_s_useremail, "password" => $_s_userpassword,
+    "role" => $_s_userrole]= $_SESSION["user"];

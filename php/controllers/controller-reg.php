@@ -12,7 +12,7 @@
         validator($user);
         ["name" => $username, "surname" => $usersurname, "email" => $useremail, "password" =>$userpass, "role"=>$userrole] = $user;
         $hashedpass = password_hash($userpass, PASSWORD_BCRYPT);
-        include "../model/model-reg.php";
+        include_once "../model/model-reg.php";
         $redirectLink = '../../regsuccess.php';
 //        header('Location:'.$redirectLink);
     }

@@ -1,11 +1,6 @@
 <?php
 
-    // $user = [
-    //     "email" => $_POST["userEmail"],
-    //     "password" => $_POST["userPassword"],
-    // ];
-    // "email" =>'josh@example.com',
-    // "password" => '111',
+session_start();
     $user = [
         "email" => $_POST["userEmail"],
         "password" => $_POST["userPassword"],
@@ -23,7 +18,7 @@
         include '../model/model-auth.php';
 
         if($auth_user){
-            session_start();
+            
             $_SESSION["user"] = $auth_user;
             var_dump($auth_user);
             $redirectLink = '/boardportal/cabinet';

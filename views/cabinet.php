@@ -1,25 +1,17 @@
 <?php
 session_start();
+if(isset($_SESSION['user'])){
 require 'templates/header.php';
 require 'templates/navbar.php';
 
-["id" => $userid, "name"=> $username,"surname"=> $usersurname, "email"=> $useremail, "password" => $userpassword,
-    "role" => $userrole]= $_SESSION["user"];
 
-?>
-<main class="container-main">
-    <div class="block" style="width: 300px; background-color: beige;">
-        <ul>
-            <h5> <?= "{$username} {$usersurname} Information" ?></h5>
-            <li> <?= "User ID: {$userid}"  ?> </li>
-            <li> <?= "User Email: {$useremail}"  ?></li>
-            <li> <?= "Role: {$userrole}"  ?></li>
-        </ul>
+include 'templates/cabinet-main.php';
 
-    </div>
 
-</main>
-<?php
 require 'templates/footer.php';
+}else{
+   http_response_code(401);
+   die('CODE 401. UNAUTHORIZED!!!'); 
+};
 ?>
 
