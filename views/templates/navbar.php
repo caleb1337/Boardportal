@@ -11,9 +11,9 @@
                 <?php
 
                 if (isset($_SESSION["user"])) {
-                    include 'navbar_auth.php';
+                    require 'navbar_auth.php';
                 } else {
-                    include 'navbar_notauth.php';
+                    require 'navbar_notauth.php';
                 }
                 ?>
             </div>

@@ -1,5 +1,5 @@
 <?php
-require_once 'php/handlers/sessiondataparser.php';
+require 'php/handlers/sessiondataparser.php';
 ?>
 <ul class="navbar-nav">
     <li class="nav-item">
@@ -9,7 +9,7 @@ require_once 'php/handlers/sessiondataparser.php';
         <a class="nav-link active" aria-current="page" href="/boardportal">Главная</a>
     </li>
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?= $_s_username." ".$_s_usersurname ?>
         </a>
         <ul class="dropdown-menu">

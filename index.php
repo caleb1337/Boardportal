@@ -23,6 +23,7 @@ if(isset($_GET['route']))
             require 'views/myadverts.php';
             break;
 
+
         default:
             require 'views/404.php';
             break;

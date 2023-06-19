@@ -1,20 +1,21 @@
 <?php
 
     $user = [
-        "name" => $_POST["userName"] ,
-        "surname" => $_POST["userSurname"],
-        "email" => $_POST["userEmail"],
+        "name" => strtolower(trim($_POST["userName"])) ,
+        "surname" =>strtolower(trim($_POST["userSurname"])),
+        "email" => strtolower(trim($_POST["userEmail"])),
         "password" => $_POST["userPassword"],
         "role" => 'user',
     ];
     include "../handlers/validator.php";
     try {
         validator($user);
-        ["name" => $username, "surname" => $usersurname, "email" => $useremail, "password" =>$userpass, "role"=>$userrole] = $user;
+        ["name" => $username, "surname" => $usersurname, "email" => $useremail,
+            "password" => $userpass, "role"=> $userrole] = $user;
         $hashedpass = password_hash($userpass, PASSWORD_BCRYPT);
-        include_once "../model/model-reg.php";
-        $redirectLink = '../../regsuccess.php';
-//        header('Location:'.$redirectLink);
+        require_once "../model/model-reg.php";
+        $redirectLink = '../../views/regsuccess.php';
+        header('Location:'.$redirectLink);
     }
     catch(Exception $error){ echo "Ошибка! Данные не валидны.", $error->getMessage();
 

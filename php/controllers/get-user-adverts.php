@@ -1,11 +1,9 @@
 <?php
 //session_start();
-require 'php/handlers/sessiondataparser.php';
-$result =0;
+require './php/handlers/sessiondataparser.php';
+$result = 0;
 try{
-  require 'php/model/model-get-user-adverts.php';
-//  var_dump($adverts);
-//    ["advert" => $advert] = $adverts;
+  require './php/model/model-get-user-adverts.php';
 
 //    print_r('<pre>');
 //    var_dump($result);

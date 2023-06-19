@@ -4,13 +4,10 @@ if(isset($_SESSION['user'])){
     require '../handlers/validator.php';
     require '../handlers/sessiondataparser.php';
 
-    $advert = [
-        "text" => $_POST["userAdvertText"],
-    ];
-    ["text" => $useradvert] = $advert;
+    $advert = $_POST['userAdvertText'];
 
     try{
-    validator($advert);
+//    validator($advert);
     require '../model/model-place-adv.php';
     header("Location:".'/boardportal/cabinet');
     die();

@@ -1,21 +1,16 @@
 <?php
-// Подключение к БД
-$servername = "localhost";
-$operatorname="root";
-$operatorpassword = "";
-$dbname = "testDataBase";
-// connector for data base
+require 'php/model/connectDB.php';
 
-
-$conn = new mysqli($servername,$operatorname,$operatorpassword,$dbname);
-if($conn->connect_error){
-die("Connetction failed".$conn->connect_error);
-}
-$sql = "SELECT advert FROM users WHERE email = '{$_s_useremail}'";
+$sql = "SELECT advert, date_stamp, advert_id FROM adverts WHERE user_id = '{$_s_userid}'";
 if($mysql_data = $conn->query($sql)){
+//    var_dump($mysql_data);
+    $result = [];
     while($row = $mysql_data->fetch_assoc()){
-//        var_dump($row);
-        $result = $row;
+//            print_r('<pre>');
+//                 var_dump($row);
+//            print_r('<pre>');
+        array_push($result, $row);
     }
 }
+$conn->close();
 
