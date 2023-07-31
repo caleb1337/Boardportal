@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once $_SERVER["DOCUMENT_ROOT"].'/boardportal/ROOT_PATH.php';
 if(isset($_SESSION['user'])){
 
     $id = $_POST['advertId'];
@@ -7,14 +8,15 @@ if(isset($_SESSION['user'])){
 
     try{
 
-        require '../model/model-redact-advert.php';
+        require ROOT_PATH . '/php/model/model-redact-advert.php';
         $path = '/boardportal/myadverts';
         die(
            header('Location:'.$path) 
         );
     }
-    catch(Exception $error){
+    catch(Error $error){
         echo "Ошибка!", $error->getMessage();
+        http_response_code(400);
     };
 }else{
    http_response_code(401);

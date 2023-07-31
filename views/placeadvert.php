@@ -9,6 +9,7 @@ require 'templates/navbar.php';
 <form class="form-floating" method="post" action="./php/controllers/advert-place.php">
   <textarea class="form-control" name="userAdvertText" id="floatingTextarea"></textarea>
   <label for="floatingTextarea">Текст объявления</label>
+  <p>Ограничение по длине текста: 5000 символов</p>
   <button type="submit" class="btn btn-primary">Разместить</button>
 </form>
 </div>

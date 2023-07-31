@@ -1,0 +1,17 @@
+{
+    "name": "evgeniy/boardportal",
+    "description": "BoardPortal",
+    "autoload": {
+        "psr-4": {
+            "Evgeniy\\Boardportal\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Evgeniy Chistyakov"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    }
+}

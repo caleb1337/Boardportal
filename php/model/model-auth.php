@@ -1,6 +1,6 @@
 <?php
-
-    require 'connectDB.php';
+    require_once $_SERVER["DOCUMENT_ROOT"].'/boardportal/ROOT_PATH.php';
+    require ROOT_PATH . '/php/model/connectDB.php';
     try{
         $sql = "SELECT * FROM users WHERE email = '$useremail'";
         if($result  = $conn->query($sql)){

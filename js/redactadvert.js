@@ -33,7 +33,7 @@ function deleteAdvert(event) {
                 let id = target.dataset.id;
                 let redactArea = document.querySelector('#advertArea');
                 let idInput = document.querySelector('#advertId');
-                let advertText = target.querySelector('.advert-text').textContent;
+                let advertText = target.querySelector('.advert-text-content').textContent;
 
                 redactArea.value = advertText;
                 idInput.value = id;

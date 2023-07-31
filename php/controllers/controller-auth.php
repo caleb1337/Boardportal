@@ -1,12 +1,13 @@
 <?php
 
 session_start();
+require_once $_SERVER["DOCUMENT_ROOT"].'/boardportal/ROOT_PATH.php';
     $user = [
         "email" => $_POST["userEmail"],
         "password" => $_POST["userPassword"],
     ];
 
-    include "../handlers/validator.php";
+    require ROOT_PATH . "/php/handlers/validator.php";
 
     try{
         validator($user);
@@ -15,7 +16,7 @@ session_start();
         $userpassword = $user["password"];
 
 
-        include '../model/model-auth.php';
+        require ROOT_PATH . '/php/model/model-auth.php';
 
         if($auth_user){
             
@@ -27,6 +28,7 @@ session_start();
         else throw new Exception('Пользователь не найден в БД. Проверьте правильность написания Email и пароля');
         
 
-    } catch(Exception $error){ echo "Ошибка! Данные не валидны.", $error->getMessage();
+    } catch(Error $error){ echo "Ошибка! Данные не валидны.", $error->getMessage();
+        http_response_code(400);
 
     };

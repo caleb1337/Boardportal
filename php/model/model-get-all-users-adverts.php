@@ -1,5 +1,6 @@
 <?php
-require 'connectDB.php';
+require_once $_SERVER["DOCUMENT_ROOT"].'/boardportal/ROOT_PATH.php';
+require ROOT_PATH . '/php/model/connectDB.php';
 
 $sql = "SELECT name,surname,date_stamp,advert,advert_id  FROM adverts,users WHERE users.id = adverts.user_id";
 if($mysql_data = $conn->query($sql)){
